@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
@@ -114,7 +112,7 @@ public class ContactWorker {
 						
 				case 5: System.out.print("Enter contact id: ");
 						id = sc.nextInt();
-						System.out.print("Enter contact number");
+						System.out.print("Enter contact number: ");
 						sc.nextLine();
 						String number = sc.nextLine();
 						ContactService.addContactNumber(id, number, contactlist);
@@ -127,12 +125,12 @@ public class ContactWorker {
 				case 7:	ContactService.readContactsFromFile(contactlist,"Contact.txt");
 						break;
 				
-				case 8: ContactService.serializeContactDetails(contactlist, "Contact.txt");
+				case 8: ContactService.serializeContactDetails(contactlist, "objectFile.txt");
 						break;
 				
 				case 9: 
 					List<Contact> temp;
-					temp = ContactService.deserializeContact("Contact.txt");
+					temp = ContactService.deserializeContact("objectFile.txt");
 					display(temp);
 					break;
 				
